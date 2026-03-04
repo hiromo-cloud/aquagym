@@ -1,0 +1,59 @@
+/* Google Fonts: M PLUS Rounded 1c の読み込み */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800;
+    /* デフォルトのフォントを丸文字に設定 */
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* 運動中の激しい動き */
+  .animate-wiggle {
+    animation: wiggle 2.5s ease-in-out infinite;
+  }
+  
+  /* 休憩中のゆったりした動き */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+/* アニメーションの定義 */
+@keyframes wiggle {
+  0%, 100% { 
+    transform: rotate(-8deg) translateX(-8px) scale(1.1); 
+  }
+  50% { 
+    transform: rotate(8deg) translateX(8px) scale(1.1); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0) rotate(-2deg); 
+  }
+  50% { 
+    transform: translateY(-15px) rotate(2deg); 
+  }
+}
+
+/* スクロールバーのカスタマイズ（可愛らしいデザインに） */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-orange-50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-orange-200 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-orange-300;
+}
